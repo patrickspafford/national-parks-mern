@@ -20,7 +20,11 @@ const NationalParkSchema  = new mongoose.Schema({
     updated_date: {
         type: Date,
         default: Date.now
-    }
+    },
+    attractions: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'attraction'
+    }]
 })
 
 module.exports = NationalPark = mongoose.model('park', NationalParkSchema)
