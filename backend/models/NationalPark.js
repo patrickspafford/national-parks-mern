@@ -21,6 +21,10 @@ const NationalParkSchema  = new mongoose.Schema({
         type: Date,
         default: Date.now
     },
+    visits: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'visit'
+    }],
     attractions: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'attraction'

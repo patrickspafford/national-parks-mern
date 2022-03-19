@@ -12,6 +12,9 @@ const specificParkRoute = require('./routes/api/parks/park')
 // VISIT
 const allVisitRoute = require('./routes/api/visits')
 const specificVisitRoute = require('./routes/api/visits/visit')
+// ATTRACTION
+const allAttractionsRoute = require('./routes/api/attractions')
+const specificAttractionRoute = require('./routes/api/attractions/attraction')
 // VISITOR
 const allVisitorsRoute = require('./routes/api/visitors')
 const specificVisitorRoute = require('./routes/api/visitors/visitor')
@@ -34,6 +37,8 @@ app.use('/api/parks', allParkRoutes)
 app.use('/api/parks', specificParkRoute)
 app.use('/api/visits', allVisitRoute)
 app.use('/api/visits', specificVisitRoute)
+app.use('/api/attractions', allAttractionsRoute)
+app.use('/api/attractions', specificAttractionRoute)
 app.use('/api/visitors', allVisitorsRoute)
 app.use('/api/visitors', specificVisitorRoute)
 // MARK: - Start Server

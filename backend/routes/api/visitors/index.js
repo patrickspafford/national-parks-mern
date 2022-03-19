@@ -8,8 +8,12 @@ GET
 
 router.get('/', (req, res) => {
     Visitor.find()
+      .populate('visits')
       .then(visitor => res.json(visitor))
-      .catch(err => res.status(404).json({ novisitorsfound: 'No Visitors Found.'}))
+      .catch(err => {
+        console.error(err)
+        res.status(404).json({ novisitorsfound: 'No Visitors Found.'})
+      })
 })
 
 

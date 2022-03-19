@@ -8,8 +8,13 @@ GET
 
 router.get('/', (req, res) => {
     NationalPark.find()
+      .populate('attractions')
+      .populate('visits')
       .then(parks => res.json(parks))
-      .catch(err => res.status(404).json({ noparksfound: 'No Parks Found.'}))
+      .catch(err => {
+        console.error(err)
+        res.status(404).json({ noparksfound: 'No Parks Found.'})
+      })
 })
 
 

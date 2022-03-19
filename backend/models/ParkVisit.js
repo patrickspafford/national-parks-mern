@@ -21,10 +21,6 @@ const ParkVisitSchema = mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'visitor',
     }],
-    attractionsVisited: [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'attraction'
-    }]
 })
 
 module.exports = ParkVisit = mongoose.model('visit', ParkVisitSchema)
